@@ -9,3 +9,7 @@ addDecorator((storyFn) => (
         {storyFn()}
     </>
 ))
+
+export const parameters = {
+    layout: 'fullscreen',
+}
