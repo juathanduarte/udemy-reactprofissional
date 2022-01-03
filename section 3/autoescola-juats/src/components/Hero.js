@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import { breakAt, BreakpointSize } from './BreakPoints'
@@ -54,13 +55,19 @@ const Container = styled.div`
     }
 `
 
-const Hero = ({ image, tittle, children }) => (
+const Hero = ({ image, title, children }) => (
     <Root image={image}>
         <Container>
-            <Title>{tittle}</Title>
+            <Title>{title}</Title>
             <Content>{children}</Content>
         </Container>
     </Root>
 )
+
+Hero.propTypes = {
+    image: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    children: PropTypes.node,
+}
 
 export default Hero
