@@ -3,6 +3,7 @@ import React from 'react';
 import Hero from "../components/Hero";
 import BgRoadImage from './assets/bg-road.jpg'
 import BgCarImage from './assets/bg-cars.jpg'
+import Heading from '../components/Heading';
 
 export default {
     title: 'Hero',
@@ -18,7 +19,9 @@ export const usage = () => (
 
 export const withList = () => (
     <Hero image={BgCarImage}>
-        <h1>Ganhe sua <strong>liberdade</strong><br/> para ir e vir</h1>
+        <Heading>
+            <h1>Ganhe sua <strong>liberdade</strong><br/> para ir e vir</h1>
+        </Heading>
         <ul>
             <li>Lorem ipsum dolor sit amet</li>
             <li>Lorem ipsum dolor sit amet</li>
