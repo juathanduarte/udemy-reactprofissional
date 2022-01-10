@@ -1,69 +1,69 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
+import React from "react";
+import PropTypes from "prop-types";
+import styled, { css } from "styled-components";
 
-import { breakAt, BreakpointSize } from '../styles/BreakPoints'
+import { breakAt, BreakpointSizes } from "styles/Breakpoints";
 
-const colorYellow = '#ffc107'
+const colorYellow = "#ffc107";
 
 const Root = styled.div`
-    color: #fff;
-    padding: 100px 0;
+  color: #fff;
+  padding: 100px 0;
 
-    ${(props) => css`
-        background: url(${props.image}), rgba(0, 0, 0, 0.4);
-        background-size: cover;
-        background-position: center;
-        background-blend-mode: overlay;
-    `};
-`
+  ${(props) => css`
+    background: url(${props.image}), rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+  `}
+`;
 
 const Content = styled.div`
-    p,
-    li {
-        font-size: 20px;
-        font-weight: 300;
-    }
+  p,
+  li {
+    font-size: 20px;
+    font-weight: 300;
+  }
 
-    ul {
-        list-style: none;
-        padding-left: 0;
-    }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
 
-    li {
-        &::before {
-            content: '\\2713\\0020';
-            color: ${colorYellow};
-        }
+  li {
+    &::before {
+      content: "\\2713\\0020";
+      color: ${colorYellow};
     }
-`
+  }
+`;
 
 const Container = styled.div`
-    width: 100%;
-    padding: 0 8px;
+  width: 100%;
+  padding: 0 8px;
 
-    ${breakAt(BreakpointSize.sm)} {
-        padding: 0 16px;
-    }
+  ${breakAt(BreakpointSizes.sm)} {
+    padding: 0 16px;
+  }
 
-    ${breakAt(BreakpointSize.lg)} {
-        width: 1140px;
-        padding: 0;
-        margin: 0 auto;
-    }
-`
+  ${breakAt(BreakpointSizes.lg)} {
+    width: 1140px;
+    padding: 0;
+    margin: 0 auto;
+  }
+`;
 
 const Hero = ({ image, children }) => (
-    <Root image={image}>
-        <Container>
-            <Content>{children}</Content>
-        </Container>
-    </Root>
-)
+  <Root image={image} data-testid="hero">
+    <Container>
+      <Content>{children}</Content>
+    </Container>
+  </Root>
+);
 
 Hero.propTypes = {
-    image: PropTypes.string,
-    children: PropTypes.node,
-}
+  image: PropTypes.string,
+  children: PropTypes.node,
+};
 
-export default Hero
+export default Hero;
